@@ -1,0 +1,7 @@
+%ul
+- Event.all.each do |event|
+  %li 
+    %div= event.title
+    %div= format_date_time event.start_date
+
+

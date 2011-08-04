@@ -14,8 +14,8 @@
     %tr
       %td= event.title
       %td= event.description
-      %td= event.start_date.strftime('%m/%d/%y %H:%m %p')
-      %td= event.end_date.strftime('%m/%d/%y %H:%m %p')
+      %td= format_date_time event.start_date
+      %td= format_date_time event.end_date
       %td= link_to 'Show', event
       %td= link_to 'Edit', edit_event_path(event)
       %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
