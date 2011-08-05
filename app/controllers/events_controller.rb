@@ -63,9 +63,16 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
+    start_time = filter_time(params[:event], :start_date)
+    end_time = filter_time(params[:event], :end_date)
+    @event = Event.new()
+    @event.title = params[:event][:title]
+    @event.description = params[:event][:description]
+    @event.start_date = start_time
+    @event.end_date = end_time
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :ok }
       else

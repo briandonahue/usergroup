@@ -1,7 +1,7 @@
 %ul
-- Event.all.each do |event|
+- Event.where(:start_date.gte => Date.today).each do |event|
   %li 
-    %div= event.title
-    %div= format_date_time event.start_date
+    %div= link_to event.title, event_url(event)
+    %div= format_date_time(event.start_date)
 
 

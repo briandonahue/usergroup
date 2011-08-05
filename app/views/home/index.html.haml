@@ -1,8 +1,6 @@
 .quarter
-  - @users.each do |user|
-    %p User: #{link_to user.name, user}
+  = render "shared/upcoming_events"
 .half
   A bunch of body text.
 .quarter.last
-  = render "shared/upcoming_events"
   = render "tweets"

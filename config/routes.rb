@@ -7,6 +7,7 @@ Usergroup::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+  resources :events
 
 
   # The priority is based upon order of creation:
