@@ -58,7 +58,7 @@ module Usergroup
       ENV['MONGOID_PORT'] = mongo_uri.port.to_s
       ENV['MONGOID_USERNAME'] = mongo_uri.user
       ENV['MONGOID_PASSWORD'] = mongo_uri.password
-      ENV['MONGOID_DATABASE'] = mongo_uri.path.gsub(“/”, “”)
+      ENV['MONGOID_DATABASE'] = mongo_uri.path.gsub("/", "")
     end
   end
 end
