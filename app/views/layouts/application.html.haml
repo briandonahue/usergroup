@@ -1,20 +1,21 @@
 !!! 5
 %html
   %head
-    %title usergroup
+    %title Philly ALT.NET - Pragmatism in C#
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
   %body
     #container
       .full.bg_mediumgrey Logo
-      .full.bg_lightgrey
+      .full.bg_lightgrey.bottom_margin_20
         .twothird.first.bg_lightgrey
-          %h1 User Group
+          %h1.top_margin_10 Philly ALT.NET
         .third.last
           %ul.hmenu
             = render 'devise/menu/registration_items'
             = render 'devise/menu/login_items'
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+      .full
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
       = yield

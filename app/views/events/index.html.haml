@@ -1,25 +1,26 @@
-%h1 Listing events
+.full
+  %h1 Listing events
 
-%table.datalist
-  %tr
-    %th Title
-    %th Description
-    %th Start date
-    %th End date
-    %th
-    %th
-    %th
-
-  - @events.each do |event|
+  %table.datalist
     %tr
-      %td= event.title
-      %td= event.description
-      %td= format_date_time event.start_date
-      %td= format_date_time event.end_date
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+      %th Title
+      %th Description
+      %th Start date
+      %th End date
+      %th
+      %th
+      %th
 
-%br
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.description
+        %td= format_date_time event.start_date
+        %td= format_date_time event.end_date
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Event', new_event_path
+  %br
+
+  = link_to 'New Event', new_event_path
