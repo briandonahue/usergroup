@@ -14,9 +14,15 @@
     = f.text_area :description
   .field
     = f.label :start_date
-    = f.datetime_select :start_date
+    = text_field :event, "start_date_picker", value: format_date(f.object.start_date), class: "date"
+  .field
+    = f.label "Start Time"
+    = f.time_select :start_date
   .field
     = f.label :end_date
-    = f.datetime_select :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :end_date
+    = f.time_select :end_date
   .actions
     = f.submit 'Save'
